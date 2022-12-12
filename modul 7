@@ -1,0 +1,123 @@
+/* ---------------------------- */
+/* Program Array Satu Dimensi */
+/* ---------------------------- */
+#include<iomanip>
+#include<iostream>
+using namespace std;
+int main(){
+  int i,j;
+  char nama [5][20];
+  float nilai1 [5];
+  float nilai2 [5];
+  float hasil [5];
+  //clrscr();
+  
+  for (i=1 ; i<=2 ; i++){
+    cout <<"Data ke - " <<i<<endl;
+    cout <<"Nama siswa = ";
+    cin >> nama[i];
+    for (j=1; j<=1; j++){
+      cout<<"Nilai MidTest = ";
+      cin>>nilai1[i];
+      cout<<"Nilai Final = ";
+      cin>>nilai2[i];
+    }
+    cout<<endl;
+    hasil[i]=(nilai1[i]*0.40)+(nilai2[i]*0.60);
+  }
+  
+  cout <<"------------------------------------------------"<<endl;
+  cout <<"----------" << endl;
+  cout <<"No.    Nama siswa     Nilai    Nilai    Hasil"<<endl;
+  cout<<"                       MidTest  Final    Ujian"<<endl;
+  cout <<"------------------------------------------------"<<endl;
+  cout <<"----------" << endl;
+  
+  for(i=1; i<=2; i++){
+    cout<<setiosflags(ios::left)<<setw(4)<<i;
+    cout<<setiosflags(ios::left)<<setw(13)<<nama[i];
+    cout<<setprecision(2)<<setw(10)<<nilai1[i];
+    cout<<setprecision(2)<<setw(10)<<nilai2[i];
+    cout<<setprecision(2)<<setw(10)<<hasil[i]<<endl;
+  }
+  cout <<"------------------------------------------------"<<endl
+  cout <<"----------" << endl;
+  return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int bilangan[100], input, cari, jumlah = 0, i;
+
+  cout << "Masukkan jumlah bilangan = ";
+  cin >> input;
+  cout << endl;
+  for (i = 0; i < input; i++) {
+    cout << "Masukkan Indeks ke-" << i << " : ";
+    cin >> bilangan[i];
+  }
+  cout << endl;
+  cout << "Deretan bilangan adalah = ";
+  for (i = 0; i < input; i++) {
+    cout << bilangan[i] << " ";
+  }
+  cout << endl;
+  cout << "\nMasukkan bilangan yang akan dicari : ";
+  cin >> cari;
+
+  for (i = 0; i < input; i++) {
+    if (bilangan[i] == cari) {
+      jumlah++;
+    }
+  }
+  cout << "Bilangan " << cari << " ditemukan sebanyak " << jumlah << endl;
+
+  bool found = false;
+  for (i = 0; i < input; i++) {
+    if (bilangan[i] == cari) {
+      cout << "Pada posisi ke = " << i;
+      found = true;
+      break;
+    }
+  }
+  if (!found) {
+    cout << "Bilangan tidak ditemukan" << endl;
+  }
+  
+  return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main(){
+  int input[10],arr,i,min,max;
+  cout<<"input element array =";
+  cin>>arr;
+
+  cout<<"input"<<arr<<"angka :";
+  cout<<endl;
+  for (i=0; i<arr; i++){
+    cin>>input[i];
+  }
+  cout<<endl;
+  min=input[0];
+  for(i=1; i<arr; i++){
+    if(input[i]<min){
+      min=input[i];
+    }
+  }
+  cout<<"\nAngka terkecil adalah = "<<min;
+
+  max=input[0];
+  for(i=0; i<arr; i++){
+    if(input[i]>max){
+      max=input[i];
+    }
+    break;
+  }
+  cout<<"\nAngka terbesar adalah = "<<max;
+  cout<< endl;
+  return 0;
+}
